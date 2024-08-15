@@ -4,8 +4,12 @@ div {
     outline-style: dotted;
 }
 
+#game {
+    display: flex;
+    justify-content: space-between;
+}
+
 #container {
-    margin: auto;
     height: 600px;
     width: 600px;
     display: flex;
