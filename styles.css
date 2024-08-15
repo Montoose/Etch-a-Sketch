@@ -1,0 +1,19 @@
+
+
+div {
+    outline-style: dotted;
+}
+
+#container {
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-size: 124px;
+    margin: 30px;
+}
