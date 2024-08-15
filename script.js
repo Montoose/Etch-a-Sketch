@@ -1,6 +1,5 @@
-let container = document.getElementById("container");
-
 function createGrid (numberDivs) {
+    let container = document.getElementById("container");
 
     for (i=0; i < numberDivs; i++) {
         let row = container.appendChild(document.createElement("div"));
@@ -17,4 +16,12 @@ function createGrid (numberDivs) {
     }
 }
 
-createGrid(30);
+const slider = document.getElementById("sizeSlider");
+
+slider.addEventListener("click", () => {
+    let container = document.getElementById("container");
+    container.replaceChildren();
+    let sliderValue = slider.value;
+    createGrid(sliderValue);
+}
+)
