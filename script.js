@@ -1,4 +1,9 @@
+const slider = document.getElementById("sizeSlider");
+const container = document.getElementById("container");
+const resetButton = document.getElementById("resetButton");
+const randomButton = document.getElementById("randomColor");
 
+let hoverColor = "black";
 
 let createGrid = function (numberDivs) {
     let container = document.getElementById("container");
@@ -18,27 +23,31 @@ let createGrid = function (numberDivs) {
     }
 }
 
-const slider = document.getElementById("sizeSlider");
-const container = document.getElementById("container");
-const button = document.getElementById("resetButton");
-
 window.addEventListener("load", () => {
-    slider.value = 3;
+    slider.value = 10;
     createGrid(slider.value);
 })
 
 slider.addEventListener("click", () => {
-    container.style.backgroundColor = "white";
     container.replaceChildren();
     createGrid(slider.value);
 })
 
-container.addEventListener("mouseover", (event) => {
-    let itemHovered = event.target;
-    itemHovered.style.backgroundColor = "black";
+randomButton.addEventListener("click", () => {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    hoverColor = `rgb(${r}, ${g}, ${b})`;
+    
+
 })
 
-button.addEventListener("click", () => {
+container.addEventListener("mouseover", (event) => {
+    let itemHovered = event.target;
+    itemHovered.style.backgroundColor = hoverColor;
+})
+
+resetButton.addEventListener("click", () => {
     container.replaceChildren();
     createGrid(slider.value);
 })
