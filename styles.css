@@ -7,6 +7,13 @@
     justify-content: space-between;
 }
 
+#left-menu, #right-menu {
+    width: 33%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 #container {
     height: 600px;
     width: 600px;
