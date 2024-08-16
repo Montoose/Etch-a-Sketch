@@ -1,4 +1,6 @@
-function createGrid (numberDivs) {
+
+
+let createGrid = function (numberDivs) {
     let container = document.getElementById("container");
 
     for (i=0; i < numberDivs; i++) {
@@ -18,16 +20,25 @@ function createGrid (numberDivs) {
 
 const slider = document.getElementById("sizeSlider");
 const container = document.getElementById("container");
+const button = document.getElementById("resetButton");
+
+window.addEventListener("load", () => {
+    slider.value = 3;
+    createGrid(slider.value);
+})
 
 slider.addEventListener("click", () => {
-    let container = document.getElementById("container");
     container.style.backgroundColor = "white";
     container.replaceChildren();
-    let sliderValue = slider.value;
-    createGrid(sliderValue);
+    createGrid(slider.value);
 })
 
 container.addEventListener("mouseover", (event) => {
     let itemHovered = event.target;
     itemHovered.style.backgroundColor = "black";
+})
+
+button.addEventListener("click", () => {
+    container.replaceChildren();
+    createGrid(slider.value);
 })
