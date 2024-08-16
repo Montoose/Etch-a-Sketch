@@ -17,11 +17,17 @@ function createGrid (numberDivs) {
 }
 
 const slider = document.getElementById("sizeSlider");
+const container = document.getElementById("container");
 
 slider.addEventListener("click", () => {
     let container = document.getElementById("container");
+    container.style.backgroundColor = "white";
     container.replaceChildren();
     let sliderValue = slider.value;
     createGrid(sliderValue);
-}
-)
+})
+
+container.addEventListener("mouseover", (event) => {
+    let itemHovered = event.target;
+    itemHovered.style.backgroundColor = "black";
+})

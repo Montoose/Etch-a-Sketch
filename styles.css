@@ -1,7 +1,5 @@
-
-
-div {
-    outline-style: dotted;
+* {
+    box-sizing: content-box;
 }
 
 #game {
@@ -14,6 +12,8 @@ div {
     width: 600px;
     display: flex;
     flex-direction: column;
+    outline-style: solid;
+    outline-color: black;
 }
 
 h1 {
